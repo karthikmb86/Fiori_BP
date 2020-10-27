@@ -1,90 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="1.0"
-    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
-    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-    xmlns:sap="http://www.sap.com/Protocols/SAPData">
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
-    </edmx:Reference>
-    <edmx:Reference Uri="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"
-        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
-    </edmx:Reference>
-    <edmx:DataServices m:DataServiceVersion="2.0">
-        <Schema Namespace="YY1_SALESHISTORYOLD_CDS" xml:lang="en" sap:schema-version="1"
-            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-            <EntityType Name="YY1_SalesHistoryOldType" sap:label="SalesHistoryOld" sap:content-version="1">
-                <Key>
-                    <PropertyRef Name="SalesOrder"/>
-                </Key>
-                <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Sales Order"/>
-                <Property Name="SalesOrder_01" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Sales Order"/>
-                <Property Name="SalesOrderType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Sales Order Type"/>
-                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Sales Organization"/>
-                <Property Name="DistributionChannel" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Distribution Channel"/>
-                <Property Name="OrganizationDivision" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Division"/>
-                <Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Sold-To Party"/>
-                <Property Name="FiscalYear" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:required-in-filter="false" sap:label="Fiscal Year"/>
-                <Property Name="Material" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Material" sap:quickinfo="Material Number"/>
-                <Property Name="Product" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Product" sap:quickinfo="Product Number"/>
-                <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Plant" sap:quickinfo="Plant (Own or External)"/>
-                <Property Name="StorageLocation" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Storage Location"/>
-                <Property Name="SalesOrderItemText" Type="Edm.String" MaxLength="40" sap:required-in-filter="false" sap:label="Item Description" sap:quickinfo="Short Text for Sales Order Item"/>
-                <Property Name="CommittedDeliveryDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:required-in-filter="false" sap:label="Committed Delivery Date" sap:quickinfo="Delivery Date that the Supplier has Committed to"/>
-                <Property Name="PaymentMethod" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:required-in-filter="false" sap:label="Payment Method"/>
-            </EntityType>
-            <EntityContainer Name="YY1_SALESHISTORYOLD_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
-                <EntitySet Name="YY1_SalesHistoryOld" EntityType="YY1_SALESHISTORYOLD_CDS.YY1_SalesHistoryOldType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
-            </EntityContainer>
-            <Annotations Target="YY1_SALESHISTORYOLD_CDS.YY1_SALESHISTORYOLD_CDS_Entities"
-                xmlns="http://docs.oasis-open.org/odata/ns/edm">
-                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
-                <Annotation Term="Aggregation.ApplySupported">
-                    <Record>
-                        <PropertyValue Property="Transformations">
-                            <Collection>
-                                <String>aggregate</String>
-                                <String>groupby</String>
-                                <String>filter</String>
-                            </Collection>
-                        </PropertyValue>
-                        <PropertyValue Property="Rollup" EnumMember="None"/>
-                    </Record>
-                </Annotation>
-            </Annotations>
-            <atom:link rel="self" href="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_SALESHISTORYOLD_CDS/$metadata"
-                xmlns:atom="http://www.w3.org/2005/Atom"/>
-                <atom:link rel="latest-version" href="https://my303577-api.s4hana.ondemand.com/sap/opu/odata/sap/YY1_SALESHISTORYOLD_CDS/$metadata"
-                    xmlns:atom="http://www.w3.org/2005/Atom"/>
-                </Schema>
-            </edmx:DataServices>
-        </edmx:Edmx>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+		<Schema Namespace="NavigationModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+
+			<EntityType Name="Employee">
+				<Key>
+					<PropertyRef Name="EmployeeID" />
+				</Key>
+				<Property Name="EmployeeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+				<Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+				<Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+				<Property Name="Address" Type="Edm.String" Nullable="true" MaxLength="60" Unicode="true" FixedLength="false" />
+				<Property Name="City" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />
+				<Property Name="Region" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />
+				<Property Name="PostalCode" Type="Edm.String" Nullable="true" MaxLength="10" Unicode="true" FixedLength="false" />
+				<Property Name="Country" Type="Edm.String" Nullable="true" MaxLength="15" Unicode="true" FixedLength="false" />
+				<Property Name="HomePhone" Type="Edm.String" Nullable="true" MaxLength="24" Unicode="true" FixedLength="false" />
+				<Property Name="ResumeID" Type="Edm.Int32" Nullable="true"/>
+				<NavigationProperty Name="Resume" Relationship="NavigationModel.FK_Employees_Resumes" FromRole="Employees" ToRole="Resumes"/>
+			</EntityType>
+
+			<EntityType Name="Resume">
+				<Key>
+					<PropertyRef Name="ResumeID"/>
+				</Key>
+				<Property Name="ResumeID" Type="Edm.Int32" Nullable="false" p8:StoreGeneratedPattern="Identity" xmlns:p8="http://schemas.microsoft.com/ado/2009/02/edm/annotation"/>
+				<Property Name="Information" Type="Edm.String" Nullable="true" Unicode="true"/>
+				<Property Name="Projects" Type="Edm.String" Nullable="true" Unicode="true"/>
+				<Property Name="Hobbies" Type="Edm.String" Nullable="true" Unicode="true"/>
+				<Property Name="Notes" Type="Edm.String" Nullable="true" Unicode="true"/>
+			</EntityType>
+
+			<Association Name="NavigationModel.FK_Employees_Resumes">
+				<End Role="Resumes" Type="NavigationModel.Resume" Multiplicity="0..1"/>
+				<End Role="Employees" Type="NavigationModel.Employee" Multiplicity="1"/>
+				<ReferentialConstraint>
+					<Dependent Role="Resumes">
+						<PropertyRef Name="ResumeID"/>
+					</Dependent>
+					<Principal Role="Employees">
+						<PropertyRef Name="ResumeID"/>
+					</Principal>
+				</ReferentialConstraint>
+			</Association>
+
+			<EntityContainer Name="NavigationEntities" p7:LazyLoadingEnabled="true" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+
+				<EntitySet Name="Employees" EntityType="NavigationModel.Employee" />
+				<EntitySet Name="Resumes" EntityType="NavigationModel.Resume" />
+
+				<AssociationSet Name="FK_Employees_Resumes" Association="NavigationModel.FK_Employees_Resumes">
+					<End EntitySet="Employees" Role="Employees"/>
+					<End EntitySet="Resumes" Role="Resumes"/>
+				</AssociationSet>
+
+			</EntityContainer>
+
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

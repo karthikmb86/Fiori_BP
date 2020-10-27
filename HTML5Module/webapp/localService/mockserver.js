@@ -31,7 +31,7 @@ sap.ui.define([
                     var oUriParameters = new UriParameters(window.location.href),
                         // parse manifest for local metatadata URI
                         sJsonFilesUrl = sap.ui.require.toUrl(_sJsonFilesPath),
-                        oMainDataSource = oManifestModel.getProperty("/sap.app/dataSources/mainService"),
+                        oMainDataSource = oManifestModel.getProperty("/sap.app/dataSources/employeeRemote"),
                         sMetadataUrl = sap.ui.require.toUrl(_sAppPath + oMainDataSource.settings.localUri),
                         // ensure there is a trailing slash
                         sMockServerUrl = oMainDataSource.uri && new URI(oMainDataSource.uri).absoluteTo(sap.ui.require.toUrl(_sAppPath)).toString();

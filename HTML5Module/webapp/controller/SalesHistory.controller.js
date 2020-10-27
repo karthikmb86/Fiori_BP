@@ -1,15 +1,19 @@
 sap.ui.define([
-		"sap/ui/core/mvc/Controller"
+		"ns/HTML5Module/controller/BaseController"
 	],
 	/**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-	function (Controller) {
+	function (BaseController) {
 		"use strict";
 
-		return Controller.extend("ns.HTML5Module.controller.SalesHistory", {
+		return BaseController.extend("ns.HTML5Module.controller.SalesHistory", {
 			onInit: function () {
 
-			}
+            },
+            
+            getBPDetails:function(oEvent){
+
+            }
 		});
 	});
