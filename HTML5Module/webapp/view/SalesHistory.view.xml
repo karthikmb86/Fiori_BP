@@ -1,0 +1,17 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ns.HTML5Module.controller.SalesHistory" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+					    <List noDataText="Drop list items here" items="{/YY1_SalesHistoryOld}" id="list0">
+					        <items>
+					            <StandardListItem type="Navigation" title="{SalesOrder}" icon="sap-icon://picture" id="item0" description="{DistributionChannel}"/>
+					        </items>
+					    </List>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
