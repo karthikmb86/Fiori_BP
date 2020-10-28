@@ -1,0 +1,54 @@
+<mvc:View controllerName="ns.HTML5Module.controller.Student"
+	xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Page title="{i18n>StudentPageTitle}" showNavButton="true"
+		navButtonPress="onNavBack" class="sapUiResponsiveContentPadding">
+		<content>
+			<Table items="{/students}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Students" level="H2" />
+						<ToolbarSpacer></ToolbarSpacer>
+						<Button icon="sap-icon://add" text="Add Student"
+							press="handleAddStudent" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Name" />
+					</Column>
+					<Column>
+						<Text text="Gender" />
+					</Column>
+					<Column>
+						<Text text="Date Of Birth" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Father Name" />
+					</Column>
+					<Column hAlign="Right">
+						<Text text="Contact Number" />
+					</Column>
+					<Column hAlign="Right">
+						<Text text="Action" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier title="{firstName}"/>
+							<Text text="{genderText}"/>
+							<Text text="{dateOfBirth}"/>
+							<Text text="{fatherName}"/>
+							<Text text="{contactNumber}"/>
+							<HBox justifyContent="End">
+								<Button icon="sap-icon://edit" press="handleEditStudent" />
+								<Button icon="sap-icon://delete"
+									press="handleDeleteStudent" />
+							</HBox>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>
