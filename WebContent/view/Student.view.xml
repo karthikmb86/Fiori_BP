@@ -3,7 +3,8 @@
 	<Page title="{i18n>StudentPageTitle}" showNavButton="true"
 		navButtonPress="onNavBack" class="sapUiResponsiveContentPadding">
 		<content>
-			<Table items="{/students}">
+		<Label text="TEST" class="sapUiSmallMarginBottom" />
+			<Table items="{/student}">
 				<headerToolbar>
 					<Toolbar>
 						<Title text="Students" level="H2" />
@@ -36,7 +37,7 @@
 					<ColumnListItem>
 						<cells>
 							<ObjectIdentifier title="{firstName}"/>
-							<Text text="{genderText}"/>
+							<Text text="{gender}"/>
 							<Text text="{dateOfBirth}"/>
 							<Text text="{fatherName}"/>
 							<Text text="{contactNumber}"/>

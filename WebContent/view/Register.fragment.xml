@@ -1,7 +1,58 @@
-<core:FragmentDefinition
-   xmlns="sap.m"
-   xmlns:core="sap.ui.core" >
-   <Dialog
-      title="Hello {/recipient/name}">
-   </Dialog>
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Dialog>
+		<f:SimpleForm id="SimpleFormChange354" minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" title="Address" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" class="editableForm">
+			<f:content>
+				<core:Title text="Basic Information"/>
+				<Label text="Name"/>
+				<Input value="{/student2/firstName}" id="firstName" placeholder="First Name"/>
+				<Input value="{/student2/middleName}" placeholder="Middle Name">
+					<layoutData>
+						<l:GridData span="L2 M2 S4"/>
+					</layoutData>
+				</Input>
+				<Input value="{/student2/lastName}" id="lastName" placeholder="Last Name">
+					<layoutData>
+						<l:GridData span="L2 M2 S4"/>
+					</layoutData>
+				</Input>
+				<core:Icon src="sap-icon://person-placeholder" size="3em">
+				</core:Icon>
+				<Label text="gender"/>
+				<RadioButtonGroup columns="3" width="500px" class="sapUiMediumMarginBottom">
+					<buttons>
+						<RadioButton id="Male" text="Male"/>
+						<RadioButton id="Female" text="Female"/>
+					</buttons>
+				</RadioButtonGroup>
+				<Label text="Date of birth"/>
+				<DatePicker id="DP1"  value="" placeholder="DOB" change="handleChange" class="sapUiSmallMarginBottom">
+					<layoutData>
+						<l:GridData span="L4 M3 S4"/>
+					</layoutData>
+				</DatePicker>
+				<Label text="Father's Name"/>
+				<Input value="{/student2/fatherName}" id="fatherName" placeholder="Enter Father's Name">
+					<layoutData>
+						<l:GridData span="L2 M2 S4"/>
+					</layoutData>
+				</Input>
+				<Label text="Contact Number" />
+				<Input value="{/student2/contactNumber}" id="contactNumber" placeholder="Enter Contact Number">
+					<layoutData>
+						<l:GridData span="L2 M2 S4"/>
+					</layoutData>
+				</Input>
+				<Label text="Alternative Number"/>
+				<Input value="{/student2/alternativeNumber}" id="alternativeNumber" placeholder="Enter Alternative Number">
+					<layoutData>
+						<l:GridData span="L2 M2 S4"/>
+					</layoutData>
+				</Input>				 
+				<Button type="Accept" text="Save" press="handleSaveBtnPress" ariaDescribedBy="acceptButtonDescription genericButtonDescription">
+				</Button>
+				<Button type="Reject" text="Cancel" press="handleCancelBtnPress" ariaDescribedBy="rejectButtonDescription genericButtonDescription">
+				</Button>				
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
 </core:FragmentDefinition>
