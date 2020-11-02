@@ -12,6 +12,14 @@ sap.ui.define([
         },
 		onNavToEmployees : function (oEvent){
 			this.getRouter().navTo("employeeList");
+		},
+        
+        onNavToStudents : function (oEvent){
+			this.getRouter().navTo("student");
+		},
+		
+		onNavToCPIDashboard: function(oEvent){
+			this.getRouter().navTo("cpidashboard");
 		}
     });
 

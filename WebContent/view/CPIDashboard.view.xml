@@ -1,0 +1,57 @@
+<mvc:View controllerName="ns.HTML5Module.controller.CPIDashboard"
+	xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<Page title="{i18n>CPIDashboardPageTitle}" showNavButton="true"
+		navButtonPress="onNavBack" class="sapUiResponsiveContentPadding">
+		<content>
+		<Label text="TEST" class="sapUiSmallMarginBottom" />
+			<Table items="{/CPIMsgProcLog}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Messages" level="H2" />
+						<ToolbarSpacer></ToolbarSpacer>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Start Time" />
+					</Column>
+					<Column>
+						<Text text="End Time" />
+					</Column>
+					<Column>
+						<Text text="Status" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="iFlow" />
+					</Column>
+					<Column hAlign="Right">
+						<Text text="Sender" />
+					</Column>
+					<Column hAlign="Right">
+						<Text text="Receiver" />
+					</Column>
+					<Column hAlign="Right">
+						<Text text="MessageID" />
+					</Column>
+					<Column hAlign="Right">
+						<Text text="CorrelationID" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier title="{LogStart}"/>
+							<Text text="{LogEnd}"/>
+							<Text text="{Status}"/>
+							<Text text="{IntegrationArtifact/Name}"/>
+							<Text text="{Sender}"/>
+							<Text text="{Receiver}"/>
+							<Text text="{MessageGuid}"/>
+							<Text text="{CorrelationId}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

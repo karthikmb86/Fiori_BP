@@ -142,6 +142,11 @@
 					"pattern": "student",
 					"name": "student",
 					"target": "student"
+				},
+				{
+					"pattern": "cpidashboard",
+					"name": "cpidashboard",
+					"target": "cpidashboard"
 				}
 			],
 			"targets": {
@@ -164,6 +169,10 @@
 				},
 				"student": {
 					"viewName": "Student",
+					"viewLevel": 2
+				},
+				"cpidashboard": {
+					"viewName": "CPIDashboard",
 					"viewLevel": 2
 				}
 			}
